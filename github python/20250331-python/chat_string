@@ -1,0 +1,11 @@
+resident_registration_number = "881120-1068234"
+birth_date = resident_registration_number[:6]
+address_data = resident_registration_number[7:]
+
+print("생년월일:", birth_date)
+print("주소 데이터:", address_data)
+
+str3 = "a:b:c:d"
+str4 = str3.replace(":", "#")
+print("str3 = ", str3)
+print("str4 = ", str4)
