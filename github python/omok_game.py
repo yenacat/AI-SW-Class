@@ -174,6 +174,6 @@ if __name__ == "__main__":
     print("=== 오목 게임 (Gomoku) ===")
     print(f"판 크기: {BOARD_SIZE}x{BOARD_SIZE}")
     print(f"승리 조건: {WIN_LENGTH}개의 돌을 연속으로 놓기")
-    print("좌표는 1부터 시작합니다 (예: 가장 왼쪽 위는 1,1)")
+    print("좌표는 1부터 시작합니다. (예: 가장 왼쪽 위는 1,1)")
     play_omok()
     input("\n아무 키나 눌러 종료하세요...")  # 게임 종료 후 바로 창이 닫히는 것을 방지
