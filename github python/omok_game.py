@@ -9,12 +9,12 @@ WIN_LENGTH = 5  # 승리 조건 (연속된 돌 개수)
 
 
 def initialize_board(size):
-    """지정된 크기의 빈 오목판을 생성합니다."""
+    """지정된 크기의 빈 오목판을 생성"""
     return [[EMPTY for _ in range(size)] for _ in range(size)]
 
 
 def print_board(board):
-    """현재 오목판 상태를 CMD에 보기 좋게 출력합니다."""
+    """현재 오목판 상태를 CMD에 출력"""
     size = len(board)
 
     # 상단 열 번호 출력
@@ -33,7 +33,7 @@ def print_board(board):
 
 
 def is_valid_move(board, r, c):
-    """(r, c) 위치에 돌을 놓을 수 있는지 확인합니다."""
+    """(r, c) 위치에 돌을 놓을 수 있는지 확인"""
     size = len(board)
     if 0 <= r < size and 0 <= c < size:  # 보드 범위 내인지 확인
         return board[r][c] == EMPTY  # 해당 칸이 비어있는지 확인
@@ -41,7 +41,7 @@ def is_valid_move(board, r, c):
 
 
 def place_stone(board, r, c, player_stone):
-    """(r, c) 위치에 플레이어의 돌을 놓습니다."""
+    """(r, c) 위치에 플레이어의 돌을 놓음"""
     if is_valid_move(board, r, c):
         board[r][c] = player_stone
         return True
@@ -52,7 +52,7 @@ def place_stone(board, r, c, player_stone):
 
 
 def check_win(board, player_stone):
-    """현재 플레이어가 승리했는지 확인합니다."""
+    """현재 플레이어가 승리했는지 확인"""
     size = len(board)
 
     # 모든 칸에 대해 가로, 세로, 대각선 방향으로 확인
@@ -83,7 +83,7 @@ def check_win(board, player_stone):
 
 
 def is_board_full(board):
-    """보드가 가득 찼는지 확인합니다 (무승부 조건)."""
+    """보드가 가득 찼는지 확인 (무승부 조건)"""
     for row in board:
         if EMPTY in row:
             return False  # 빈 칸이 하나라도 있으면 가득 차지 않음
@@ -94,7 +94,7 @@ def is_board_full(board):
 
 
 def get_player_input(player_name, player_stone):
-    """플레이어로부터 좌표 입력을 받고 유효성을 검사합니다."""
+    """플레이어로부터 좌표 입력을 받고 유효성을 검사"""
     while True:
         try:
             coord_str = input(
@@ -126,7 +126,7 @@ def get_player_input(player_name, player_stone):
 
 
 def play_omok():
-    """오목 게임을 시작하고 진행합니다."""
+    """오목 게임을 시작하고 진행"""
     board = initialize_board(BOARD_SIZE)
     current_player_stone = BLACK
     current_player_name = "흑돌"
